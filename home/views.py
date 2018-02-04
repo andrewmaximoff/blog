@@ -1,6 +1,6 @@
 from django.http import HttpResponse
-from django.views import generic, defaults
-from django.shortcuts import render_to_response
+from django.views import generic
+from django.template import Context, loader
 from blog.models import Post
 
 
@@ -15,6 +15,9 @@ class IndexView(generic.ListView):
 
 
 def handler404(request):
-    response = render_to_response('home/404.htm')
-    response.status_code = 404
-    return response
+    template = loader.get_template('home/404.htm')
+    context = Context({
+        'message': 'All: %s' % request,
+    })
+
+    return HttpResponse(content=template.render(context), content_type='text/html; charset=utf-8', status=404)
