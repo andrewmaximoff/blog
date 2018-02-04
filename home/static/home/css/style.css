@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300');
+
 header {
     padding-top: 3px;
 }
@@ -8,4 +10,8 @@ footer {
 
 .navbar-dark {
     /*background: #037CFF;*/
+}
+
+div {
+    font-family: 'Oswald', sans-serif;
 }
