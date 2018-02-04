@@ -14,7 +14,7 @@ class IndexView(generic.ListView):
         return self.model.objects.order_by('-date')
 
 
-def handler404(request):
+def error404(request):
     template = loader.get_template('home/404.htm')
     context = Context({
         'message': 'All: %s' % request,
