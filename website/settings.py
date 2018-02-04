@@ -24,11 +24,16 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ.get('SERVER_ON') == 'on':
+    DEBUG = False
+else:
+    DEBUG = True
 
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
+    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
