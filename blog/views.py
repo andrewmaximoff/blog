@@ -28,4 +28,3 @@ class CategoriesView(generic.ListView):
 class CategoriesDetailView(generic.DetailView):
     model = Categories
     template_name = 'blog/categories_detail.html'
-    # context_object_name = 'category'

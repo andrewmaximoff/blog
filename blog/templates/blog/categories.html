@@ -40,7 +40,7 @@
                 <ul>
                     {% for category in categories_list %}
                         <li>
-                            <p><a href="{% url 'blog:categories_detail' category.slug %}">{{ category.name }}</a> ({{ categories_list|length }})</p>
+                            <p><a href="{% url 'blog:categories_detail' category.slug %}">{{ category.name }}</a> ({{ category.post_set.all|length }})</p>
                         </li>
                     {% endfor %}
                 </ul>
