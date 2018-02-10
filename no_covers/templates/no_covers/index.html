@@ -8,7 +8,7 @@
             {% if book_list %}
                 {% with book=book_list|get_element:counter %}
                 <div class="d-flex justify-content-center content">
-                   <pre id="nextBook" class="content">{{ book.excerpt }}</pre>
+                   <p id="nextBook" class="content" style="white-space: pre-line;">{{ book.excerpt }}</p>
                 </div>
                 <!-- Button trigger BookInfo -->
                 <div class="d-flex justify-content-between">
