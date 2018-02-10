@@ -32,6 +32,7 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
+    'no_covers.apps.NoCoversConfig',
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
@@ -75,6 +76,13 @@ TEMPLATES = [
         },
     },
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'books_cache_table',
+    }
+}
 
 WSGI_APPLICATION = 'website.wsgi.application'
 

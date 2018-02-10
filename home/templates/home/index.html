@@ -5,18 +5,16 @@
         <div class="container blog">
             <hr>
             <h3><b>Недобложэг</b></h3>
-            {% if latest_post_list %}
                 <ul>
                     {% for post in latest_post_list %}
                         <li>
                             <span>{{ post.date_for_publish }}</span>
                             <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
                         </li>
+                    {% empty %}
+                         <p>No post are available.</p>
                     {% endfor %}
                 </ul>
-            {% else %}
-                <p>No post are available.</p>
-            {% endif %}
         </div>
     </main>
 {% endblock %}

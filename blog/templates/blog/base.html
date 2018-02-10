@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Maximoff</title>
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -38,12 +39,6 @@
         </nav>
     </header>
     <br>
-    <div class="container title-body">
-{#        <img src="static/title_img.png" alt="image" class="rounded float-right" width="200" height="200">#}
-        <h1><b>Дом криптоанархиста</b></h1>
-        <p>До сих пор в разработке.</p>
-    </div>
-
     <main>
         {% block content %}
         {% endblock %}

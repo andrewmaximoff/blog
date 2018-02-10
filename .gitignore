@@ -3,5 +3,3 @@ venv/
 *.pyc
 staticfiles
 .env
-
-booksearch/

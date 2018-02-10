@@ -1,12 +1,15 @@
-{% extends 'home/base.html' %}
+{% extends 'blog/base.html' %}
 
 {% block content %}
     <main>
-        <div class="container blog">
+        <div class="container">
             <div>
-                <h1 class="title-body">{{ post.title }}</h1>
+                <h1 class="title">{{ post.title }}</h1>
+                <h5 class="title">{{ post.date_for_publish }}</h5>
             </div>
-            <span style="text-indent: 20px;">{{ post.body }}</span>
+            <div>
+                <pre class="content">{{ post.body }}</pre>
+            </div>
         </div>
     </main>
 {% endblock %}
