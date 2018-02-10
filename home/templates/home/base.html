@@ -14,16 +14,19 @@
 <body>
     <header>
         <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-toggler" href="/">~/<span class="sr-only">(current)</span></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">~/<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/"><span class="d-none  d-lg-block">~/</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'blog:index' %}">~/недобложэг<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'blog:index' %}">~/недобложэг</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link " href="{% url 'blog:categories' %}">~/категории</a>
@@ -38,9 +41,8 @@
         </nav>
     </header>
     <br>
-    <div class="container title-body">
-{#        <img src="static/title_img.png" alt="image" class="rounded float-right" width="200" height="200">#}
-        <h1><b>Дом криптоанархиста</b></h1>
+    <div class="container">
+        <h1 class="title-body"><b>Дом криптоанархиста</b></h1>
         <p>До сих пор в разработке.</p>
     </div>
 

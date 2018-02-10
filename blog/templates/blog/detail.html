@@ -1,15 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <main>
         <div class="container">
             <div>
                 <h1 class="title">{{ post.title }}</h1>
                 <h5 class="title">{{ post.date_for_publish }}</h5>
             </div>
             <div>
-                <pre class="content">{{ post.body }}</pre>
+                <p class="content">{{ post.body }}</p>
             </div>
         </div>
-    </main>
 {% endblock %}

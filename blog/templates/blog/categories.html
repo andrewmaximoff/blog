@@ -1,7 +1,6 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <main>
         <div class="container blog">
             <h1>Категории</h1>
             {% if categories_list %}
@@ -16,5 +15,4 @@
                 <p>No category are available.</p>
             {% endif %}
         </div>
-    </main>
 {% endblock %}

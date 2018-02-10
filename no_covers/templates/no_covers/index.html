@@ -1,51 +1,48 @@
 {% extends 'no_covers/base.html' %}
 {% load no_covers_extras %}
 {% block content %}
-
-    <main>
-        <div class="container">
-            <h1>Литература без обложки</h1>
-            {% if book_list %}
-                {% with book=book_list|get_element:counter %}
-                <div class="d-flex justify-content-center content">
-                   <p id="nextBook" class="content" style="white-space: pre-line;">{{ book.excerpt }}</p>
+    <div class="container">
+        <h1 class="title"><b>Литература без обложки</b></h1>
+        {% if book_list %}
+            {% with book=book_list|get_element:counter %}
+            <div class="d-flex justify-content-center content">
+               <p id="nextBook" class="content">{{ book.excerpt }}</p>
+            </div>
+            <!-- Button trigger BookInfo -->
+            <div class="d-flex justify-content-between">
+                <div></div>
+                <div class="p-2">
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                        Хочу прочитать эту книгу
+                    </button>
                 </div>
-                <!-- Button trigger BookInfo -->
-                <div class="d-flex justify-content-between">
-                    <div></div>
-                    <div class="p-2">
-                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
-                            Хочу прочитать эту книгу
-                        </button>
-                    </div>
-                    <div class="p-2">
-                        <a class="btn btn-dark" role="button" href="{% url 'no_covers:index' %}">
-                            Дальше
-                        </a>
-                    </div>
+                <div class="p-2">
+                    <a class="btn btn-dark" role="button" href="{% url 'no_covers:index' %}">
+                        Дальше
+                    </a>
                 </div>
-                <!-- BookInfo -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">{{ book.title }} — {{ book.author }}</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+            </div>
+            <!-- BookInfo -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">{{ book.title }} — {{ book.author }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
 
-                            <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                    <a class="btn btn-primary" href="{{ book.url_link }}" target="_blank" role="button">Читать на lib.ru</a>
-                            </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                                <a class="btn btn-primary" href="{{ book.url_link }}" target="_blank" role="button">Читать на lib.ru</a>
                         </div>
                     </div>
                 </div>
-                {% endwith %}
-            {% else %}
-                <p>No post are available.</p>
-            {% endif %}
-        </div>
-    </main>
+            </div>
+            {% endwith %}
+        {% else %}
+            <p>No post are available.</p>
+        {% endif %}
+    </div>
 {% endblock %}

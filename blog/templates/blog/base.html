@@ -6,8 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Maximoff</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" />
+    <title>Blog</title>
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,16 +14,19 @@
 <body>
     <header>
         <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-toggler" href="/">~/<span class="sr-only">(current)</span></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">~/<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/"><span class="d-none  d-lg-block">~/</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'blog:index' %}">~/недобложэг<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'blog:index' %}">~/недобложэг</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link " href="{% url 'blog:categories' %}">~/категории</a>

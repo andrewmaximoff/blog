@@ -1,20 +1,18 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <main>
-        <div class="container blog">
-            <hr>
-            <h3><b>Недобложэг</b></h3>
-                <ul>
-                    {% for post in latest_post_list %}
-                        <li>
-                            <span>{{ post.date_for_publish }}</span>
-                            <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
-                        </li>
-                    {% empty %}
-                         <p>No post are available.</p>
-                    {% endfor %}
-                </ul>
-        </div>
-    </main>
+    <div class="container blog title-body">
+        <hr>
+        <h3><b>Недобложэг</b></h3>
+            <ul>
+                {% for post in latest_post_list %}
+                    <li>
+                        <label for='link{{ post.id }}' >{{ post.date_for_publish }}</label>
+                        <a id='link{{ post.id }}' href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+                    </li>
+                {% empty %}
+                     <p>No post are available.</p>
+                {% endfor %}
+            </ul>
+    </div>
 {% endblock %}

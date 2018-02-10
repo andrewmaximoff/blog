@@ -1,7 +1,6 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <main>
         <div class="container blog">
             <h1>Блог</h1>
             {% if latest_post_list %}
@@ -17,5 +16,4 @@
                 <p>No post are available.</p>
             {% endif %}
         </div>
-    </main>
 {% endblock %}
