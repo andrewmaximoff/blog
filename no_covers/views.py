@@ -20,6 +20,6 @@ class IndexView(generic.View):
             request.session['counter'] = counter + 1
         unique_id = request.session.get('queryset_id', id(books))
         request.session['queryset_id'] = unique_id
-        cache.set(unique_id, books, 60)
+        cache.set(unique_id, books, 240)
         return render(request, self.template_name, {'book_list': books,
                                                     'counter': counter})
